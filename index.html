@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Языковой энтузиаст и переводчик</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <h1>Языковой энтузиаст и переводчик</h1>
+        <p class="subtitle">Вадим Кондратов</p>
+        <p class="subtitle">Языковой энтузиаст и переводчик</p>
+        <p class="subtitle">Квалифицированный преподаватель казахского языка</p>
+        <button id="theme-toggle" class="theme-toggle" type="button">🌙 Тёмная тема</button>
+        <div class="badge">RU</div>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#languages">Изучаемые языки</a></li>
+            <li><a href="#phrase">Фраза недели</a></li>
+            <li><a href="#progress">Прогресс</a></li>
+            <li><a href="#dictionary">Словарь</a></li>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#contact">Форма</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="skills">
+            <h2>Навыки</h2>
+            <ul>
+                <li>Письменный и устный перевод</li>
+                <li>Изучение иностранных языков</li>
+                <li>Межкультурная коммуникация</li>
+                <li>Работа с CAT-инструментами</li>
+            </ul>
+        </section>
+
+        <section id="languages">
+            <h2>Изучаемые языки</h2>
+            <div class="lang-cards">
+                <div class="lang-card">
+                    <span class="flag">🇰🇿</span>
+                    <h3>Қазақ тілі</h3>
+                    <p class="level">Продвинутый (B2)</p>
+                </div>
+                <div class="lang-card">
+                    <span class="flag">🇫🇷</span>
+                    <h3>Français</h3>
+                    <p class="level">Средний (B1)</p>
+                </div>
+                <div class="lang-card">
+                    <span class="flag">🇬🇧</span>
+                    <h3>English</h3>
+                    <p class="level">Продвинутый (C1)</p>
+                </div>
+                <div class="lang-card">
+                    <span class="flag">🇩🇪</span>
+                    <h3>Deutsch</h3>
+                    <p class="level">Начальный (A2)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="phrase">
+            <h2>Фраза недели</h2>
+            <div class="phrase-grid">
+                <div class="phrase-card">
+                    <p class="phrase-original">Сәлеметсіз бе! <button class="audio-icon" type="button" aria-label="Прослушать">🔊</button></p>
+                    <p class="phrase-translation">Перевод: Здравствуйте!</p>
+                    <p class="phrase-transcription">Транскрипция: [sәlemetsiz be]</p>
+                </div>
+                <div class="phrase-card">
+                    <p class="phrase-original">Bonjour, comment ça va? <button class="audio-icon" type="button" aria-label="Прослушать">🔊</button></p>
+                    <p class="phrase-translation">Перевод: Здравствуйте, как дела?</p>
+                    <p class="phrase-transcription">Транскрипция: [bɔ̃.ʒuʁ kɔ.mɑ̃ sa va]</p>
+                </div>
+                <div class="phrase-card">
+                    <p class="phrase-original">Nice to meet you <button class="audio-icon" type="button" aria-label="Прослушать">🔊</button></p>
+                    <p class="phrase-translation">Перевод: Приятно познакомиться</p>
+                    <p class="phrase-transcription">Транскрипция: [naɪs tuː miːt juː]</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="progress">
+            <h2>Мой прогресс в изучении слов</h2>
+            <p>Ответьте на вопрос во всплывающем окне, чтобы увидеть статистику.</p>
+            <p class="greeting" id="greeting">—</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <p class="stat-value" id="stat-total">—</p>
+                    <p class="stat-label">слов выучено всего</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-value" id="stat-high">—</p>
+                    <p class="stat-label">дней с высоким прогрессом</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-value" id="stat-low">—</p>
+                    <p class="stat-label">дней с малым прогрессом</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-value" id="stat-average">—</p>
+                    <p class="stat-label">слов в день в среднем</p>
+                </div>
+            </div>
+            <p class="tempo-note" id="tempo-note" hidden>Отличный темп изучения языка!</p>
+            <h3>Слов по дням</h3>
+            <ul class="days-chart" id="days-chart"></ul>
+        </section>
+
+        <section id="dictionary">
+            <h2>Словарь слов с переводами</h2>
+            <button id="toggle-dictionary" class="btn-secondary" type="button">Скрыть словарь</button>
+
+            <div id="dictionary-content">
+                <form id="word-form" class="word-form">
+                    <div>
+                        <label for="word-input">Слово:</label>
+                        <input type="text" id="word-input" placeholder="Введите слово" required>
+                    </div>
+                    <div>
+                        <label for="translation-input">Перевод:</label>
+                        <input type="text" id="translation-input" placeholder="Введите перевод" required>
+                    </div>
+                    <div>
+                        <button type="submit">Добавить слово</button>
+                    </div>
+                </form>
+
+                <table class="dictionary-table" id="dictionary-table">
+                    <thead>
+                        <tr>
+                            <th>Слово</th>
+                            <th>Перевод</th>
+                            <th>Действие</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dictionary-body"></tbody>
+                </table>
+
+                <p id="dictionary-empty" class="dictionary-empty">Словарь пуст. Добавьте первое слово.</p>
+
+                <button id="clear-dictionary" class="btn-danger" type="button">Очистить словарь</button>
+                <p id="dictionary-error" class="error-message" role="alert"></p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Проекты</h2>
+            <ul>
+                <li>Перевод технической документации</li>
+                <li>Создание языкового подкаста</li>
+                <li>Разработка курса казахского для начинающих</li>
+                <li>Локализация мобильного приложения</li>
+            </ul>
+            <h3>Ссылки</h3>
+            <a class="ext-link" href="https://github.com/gzuzikpaid666/" target="_blank" rel="noopener">Мой профиль на GitHub</a>
+        </section>
+
+        <section id="contact">
+            <h2>Форма обратной связи</h2>
+            <form>
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+
+        <aside class="lang-aside">
+            <h2>Вадим Кондратов</h2>
+            <p>Сейчас я хочу научить студентов казахскому языку.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2026 Вадим Кондратов</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
